@@ -87,17 +87,3 @@
 </div>
 <!-- #Header Starts -->
 </div>
-<?php
-$servername = "localhost";
-$username = "dinesh";
-$password = "dinesh1997";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-?>
