@@ -1,4 +1,50 @@
 <?php include'header.php';?>
+<?php include'dbcon.php';?>
+
+<?php
+if(isset($_POST['submit'])){
+    $name = mysqli_real_escape_string($con, $_POST['form_name']);
+    $email = mysqli_real_escape_string($con, $_POST['form_email']);
+    $password = mysqli_real_escape_string($con, $_POST['form_phone']);
+    $cpassword = mysqli_real_escape_string($con, $_POST['cform_phone']);
+    $address = mysqli_real_escape_string($con, $_POST['form_message']);
+
+    $pass = password_hash($password, PASSWORD_BCRYPT);
+    $cpass = password_hash($cpassword, PASSWORD_BCRYPT);
+
+    $emailquery = " select * from user where email=''$email' ";
+    $query = mysqli_query($con, $emailquery);
+
+    $emailcount = mysqli_num_rows($query);
+
+    if($emailcount > 0){
+            ?>
+    <script>
+        alert("Email Already Exits");
+    </script>
+    <?php 
+    } else {
+      if($password === $cpassword){
+        $insertquery = "insert into user(name, email, password, address) values('$name', '$email', '$pass', '$address')";
+        $iquery = mysqli_query($con, $insertquery);
+
+        if($iquery){
+              ?>
+    <script>
+        alert("reqistered Successfully");
+    </script>
+    <?php 
+        }
+      } else {
+            ?>
+    <script>
+        alert("Password Does not matched...");
+    </script>
+    <?php 
+      }
+    }
+}
+?>
 
 <div class="">
     
