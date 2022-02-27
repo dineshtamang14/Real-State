@@ -54,7 +54,7 @@
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="index.php">Home</a></li>
+               <li class="active"><a href="home.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="agents.php">Agents</a></li>         
                 <li><a href="blog.php">Blog</a></li>
@@ -77,7 +77,7 @@
 
 <!-- Header Starts -->
 <div class="header">
-<a href="index.php"><img style="width: 4rem; height: 4rem" src="https://cdn-icons-png.flaticon.com/512/1473/1473559.png" alt="Realestate"></a>
+<a href="home.php"><img style="width: 4rem; height: 4rem" src="https://cdn-icons-png.flaticon.com/512/1473/1473559.png" alt="Realestate"></a>
 
               <ul class="pull-right">
                 <li><a href="buysalerent.php">Buy</a></li>
